@@ -1,12 +1,15 @@
 import React from 'react';
 
 function Header(props){
+    function change(){
+        console.log('changed');
+    }
     return (
-            <React.Fragment>
-                <h2>{props.info}</h2>
-                <h2>value of the header is {props.value} </h2>
-            </React.Fragment>
-        )
+        <div>
+            <h2>{props.info}</h2>
+            <input type="text" onChange={change} />
+        </div>
+    )
 }
 
 export default Header;
