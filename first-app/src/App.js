@@ -3,15 +3,13 @@ import './App.css';
 import Header from './components/header';
 import Footer from './components/footer'
 
-// function ourText(){
-//   return <p>This is our text.</p>
-// }
+
 function App() {
   return (
     <div className="App">
-     <Header></Header>
+     <Header info="This is header info" value="6"></Header>
      <p>Main Containt</p>
-     <Footer></Footer>
+     <Footer author="vmn bhuvani"></Footer>
     </div>
   );
 }
