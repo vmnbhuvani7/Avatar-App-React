@@ -8,7 +8,9 @@ class  Footer extends Component{
 
     //state in class 
     state = {
-        name : 'vmn'
+        name : 'vmn',
+        age: 20,
+        isLogin: false
     }
     changed = evt => {              //Using arrow
         this.setState({name : evt.target.value});
@@ -23,12 +25,23 @@ class  Footer extends Component{
         // componentWillReceiveProps
         // componentWillUnmount
         // componentWillUpdate
-        
+
     render(){
         return (
             <div>
-                <h2 onClick={this.props.myAlert}>Author is {this.props.author}</h2>
-                <input value={this.state.name} onChange={this.changed} type="text" />
+                { this.state.age === 20 ? "yes age is 20." : "age is not 20." }         
+                { this.state.isLogin ? ( 
+                    <div>
+                        <h2 onClick={this.props.myAlert}>Author is {this.props.author}</h2>
+                        <input value={this.state.name} onChange={this.changed} type="text" />
+                    </div>
+                    ) : (
+                        <React.Fragment>
+                            <h2>You can't show this content.</h2>
+                            <h2>You must be Login.</h2>
+                        </React.Fragment>
+                    ) }
+                
             </div>
         )
     }
