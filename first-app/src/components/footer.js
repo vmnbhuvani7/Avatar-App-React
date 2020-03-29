@@ -12,6 +12,7 @@ class  Footer extends Component{
         age: 20,
         isLogin: false
     }
+
     changed = evt => {              //Using arrow
         this.setState({name : evt.target.value});
         console.log(this.state.name);
@@ -27,9 +28,14 @@ class  Footer extends Component{
         // componentWillUpdate
 
     render(){
+
+        const animals = ['Cat', 'Dog', 'Horse']; //using to loop and key.
+
         return (
+
             <div>
-                { this.state.age === 20 ? "yes age is 20." : "age is not 20." }         
+                { this.state.age === 20 ? "yes age is 20." : "age is not 20." }  {/* conditional */}
+                  
                 { this.state.isLogin ? ( 
                     <div>
                         <h2 onClick={this.props.myAlert}>Author is {this.props.author}</h2>
@@ -41,7 +47,17 @@ class  Footer extends Component{
                             <h2>You must be Login.</h2>
                         </React.Fragment>
                     ) }
-                
+               
+               {/* Loop and key */}
+                { animals.map ( animal => {            
+                    return(
+                        <div key={animal}>
+                            <h1>{ animal }</h1>
+                            <h1>{ animal }</h1>
+                        </div>
+
+                    );
+                } ) }
             </div>
         )
     }
