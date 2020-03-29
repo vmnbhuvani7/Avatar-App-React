@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './components/header';
 import Footer from './components/footer';
+import Numbers from './components/numbers';
 import styled from 'styled-components'
 
 function createAlert(){
@@ -19,10 +20,12 @@ fontSize: '3em'
 function App() {
   return (
     <div className="App">
-     <Header info="This is header info"></Header>
+     {/* <Header info="This is header info"></Header>
      <p style={pStyle}>Main Containt</p>
      <Paragraph>New Styling </Paragraph>
-     <Footer author="vmn bhuvani" myAlert={createAlert} ></Footer>
+     <Footer author="vmn bhuvani" myAlert={createAlert} ></Footer> */}
+    
+    <Numbers />
     </div>
   );
 }
