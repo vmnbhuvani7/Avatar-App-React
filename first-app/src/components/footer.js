@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CtxConsumer } from '../index';
 
 class  Footer extends Component{
 
@@ -29,37 +30,22 @@ class  Footer extends Component{
 
     render(){
 
-        const animals = ['Cat', 'Dog', 'Horse']; //using to loop and key.
+        // const animals = ['Cat', 'Dog', 'Horse']; //using to loop and key.
 
         return (
-
-            <div>
-                { this.state.age === 20 ? "yes age is 20." : "age is not 20." }  {/* conditional */}
-                  
-                { this.state.isLogin ? ( 
+        <CtxConsumer>
+                { (context) =>(
                     <div>
-                        <h2 onClick={this.props.myAlert}>Author is {this.props.author}</h2>
-                        <input value={this.state.name} onChange={this.changed} type="text" />
+                        {context.animals.map ( animal => {            
+                            return(
+                                <div key={animal}>
+                                    <h1>{ animal }</h1>
+                                </div>
+                            );
+                        } ) }
                     </div>
-                    ) : (
-                        <React.Fragment>
-                            <h2>You can't show this content.</h2>
-                            <h2>You must be Login.</h2>
-                        </React.Fragment>
-                    ) }
-               
-               {/* Loop and key */}
-                { animals.map ( animal => {            
-                    return(
-                        <div key={animal}>
-                            <h1>{ animal }</h1>
-                            {/* <h1>{ animal }</h1> */}
-                        </div>
-
-                    );
-                } ) }
-                
-            </div>
+                )}
+        </CtxConsumer>
         )
     }
 }
