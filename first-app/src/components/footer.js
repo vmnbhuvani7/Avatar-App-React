@@ -14,7 +14,16 @@ class  Footer extends Component{
         this.setState({name : evt.target.value});
         console.log(this.state.name);
     }
-   
+   // lifecycle of react
+        // metod of React
+        // componentDidCatch
+        // componentDidUpdate
+        // componentDidMount
+        // componentWillMount
+        // componentWillReceiveProps
+        // componentWillUnmount
+        // componentWillUpdate
+        
     render(){
         return (
             <div>
