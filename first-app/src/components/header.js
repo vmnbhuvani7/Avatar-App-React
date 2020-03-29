@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Header(props){
-    function change(){
+    function change(){      //event using function
         console.log('changed');
     }
     return (
