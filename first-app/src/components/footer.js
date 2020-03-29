@@ -53,11 +53,12 @@ class  Footer extends Component{
                     return(
                         <div key={animal}>
                             <h1>{ animal }</h1>
-                            <h1>{ animal }</h1>
+                            {/* <h1>{ animal }</h1> */}
                         </div>
 
                     );
                 } ) }
+                
             </div>
         )
     }

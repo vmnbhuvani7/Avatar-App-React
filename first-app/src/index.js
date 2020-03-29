@@ -4,14 +4,20 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import Header from './components/header';
+import Footer from './components/footer';
+import { Route, BrowserRouter } from 'react-router-dom'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+const routing = (
+  <BrowserRouter>
+    <div>
+      <Route exact path="/" component={App}></Route>
+      <Route path="/header" component={Header}></Route>
+      <Route path="/footer" component={Footer}></Route>
+    </div>
+  </BrowserRouter>
+)
+
+ReactDOM.render(routing,document.getElementById('root'));
+
 serviceWorker.unregister();
