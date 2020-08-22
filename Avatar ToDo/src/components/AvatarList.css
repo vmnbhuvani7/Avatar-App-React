@@ -1,0 +1,12 @@
+.avtarStyle img {
+    width:200px;
+    height: 200px;
+   
+} 
+/* .avtarStyle {
+    background-color: purple;
+} */
+.avtarStyle h5,p{
+    color: black;
+    text-align: center;
+}
