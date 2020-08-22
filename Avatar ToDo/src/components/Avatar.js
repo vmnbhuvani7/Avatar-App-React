@@ -36,33 +36,15 @@ const Avatar=()=> {
         })
       }
     }
-          return (
-            
-            <div >
-                <h2 className="text-center">Welcome to Web World</h2>
-                <input type="text" value={avatar1.name} onChange={handleInput} />
-                {/* <input type="text" value={this.state.work} onChange={this.handleInput} /> */}
-                <button className="btn btn-success ml-5" onClick={addAvatar} >Add Avatar</button>
-                <AvatarList avatar={avatar1.avatar} name={avatar1.name}></AvatarList>
-            </div>
-          );
+    return (
+      <div >
+        <h2 className="text-center">Welcome to Web World</h2>
+        <input type="text" value={avatar1.name} onChange={handleInput} />
+        {/* <input type="text" value={this.state.work} onChange={this.handleInput} /> */}
+        <button className="btn btn-success ml-5" onClick={addAvatar} >Add Avatar</button>
+        <AvatarList avatar={avatar1.avatar} name={avatar1.name}></AvatarList>
+      </div>
+    );
 }
 
 export default Avatar
-{/* 
-<div >
-                <h2 className="text-center">Welcome to Web World</h2>
-                {
-                    avatar.map((avtarCard, i)=>{
-                    return (
-                    <AvatarList key={avatar[i].id} 
-                                name={avatar[i].name} 
-                                work={avatar[i].work}>
-                    </AvatarList>
-                        
-                    )
-                    })
-                }<br/>
-
-                <button className="btn btn-success ml-5"  >Change Title</button>
-            </div> */}

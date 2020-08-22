@@ -10,3 +10,12 @@
     color: black;
     text-align: center;
 }
+.avtarStyle h5 input{
+    background-color: transparent;
+    text-align: center;
+    border:0;
+    color: black;
+}
+.avtarStyle h5 input:focus{
+    outline: none;
+}

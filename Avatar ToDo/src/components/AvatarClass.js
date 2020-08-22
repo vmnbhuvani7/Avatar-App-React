@@ -16,6 +16,7 @@ export class AvatarClass extends Component {
       this.handleInput = this.handleInput.bind(this); 
       this.addAvatar = this.addAvatar.bind(this); 
       this.deleteAvatar = this.deleteAvatar.bind(this); 
+      this.setUpdate = this.setUpdate.bind(this); 
     }
 
     handleInput(e){
@@ -45,11 +46,24 @@ export class AvatarClass extends Component {
     }
     deleteAvatar(id){
       const filterAvatar = this.state.avatar.filter(avatar => avatar.id!== id);
-      console.log(filterAvatar);
-      console.log(this.state.avatar.id);
-      debugger;
+      // console.log(filterAvatar);
+      // debugger;
       this.setState({
         avatar:filterAvatar
+      })
+    }
+    setUpdate(name , id){
+      // debugger;
+      const avatars = this.state.avatar;
+      avatars.map(avatar=>{
+        if(avatar.id === id){
+          avatar.name = name;
+        }
+        // debugger; 
+        this.setState({
+          avatar:avatar
+        })
+        console.log(avatar);
       })
     }
     render() {
@@ -57,11 +71,14 @@ export class AvatarClass extends Component {
             <div>
                 <h2 className="text-center">Welcome to Web World</h2>
                 Name:
-                <input type="text" value={this.state.work} onChange={this.handleInput} />
+                <input type="text" value={this.state.name} onChange={this.handleInput} />
                 {/* Work:
                 <input type="text" value={this.state.name} onChange={this.handleInput} /> */}
                 <button className="btn btn-success ml-5" onClick={this.addAvatar} >Add Avatar</button>
-                <AvatarList avatar={this.state.avatar} deleteAvatar={this.deleteAvatar}></AvatarList>
+                <AvatarList avatar={this.state.avatar} 
+                            deleteAvatar={this.deleteAvatar}
+                            setUpdate = {this.setUpdate}
+                            ></AvatarList>
             </div>
       );
     }

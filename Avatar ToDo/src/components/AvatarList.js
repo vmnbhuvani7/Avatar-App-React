@@ -2,18 +2,25 @@ import React from 'react'
 import './AvatarList.css'
 
 function AvatarList(props) {
-
+    // const avatar = props.avatar;
     const avatarList =  props.avatar.map(avatar=>{
-        return(
+        return (
         <div key={avatar.id} className="card-group avtarStyle ma4 bg-light-purple pa4 grow dib shadow-5 ">
             <img src={`https://joeschmoe.io/api/v1/${avatar.name}`} alt="Avtar" />
-            <h5 className="pt-3">{avatar.name}</h5>
+            <h5 className="pt-3">
+                <input  id={avatar.id} value={avatar.name} onChange={
+                    (e)=>{
+                        props.setUpdate(e.target.value, avatar.id)
+                    }
+                } ></input>
+            </h5>
             {/* <p>{avatar.work}</p> */}
-            <button className="btn btn-success ml-3" onClick={()=>props.deleteAvatar(avatar.id)}>Delete</button>
-            <button className="btn btn-success ml-3" >Edit</button>
+            <button className="btn btn-success ml-4" onClick={()=>props.deleteAvatar(avatar.id)}>Delete</button>
+            <button className="btn btn-success  ml-4" >Edit</button>
         </div>
         )
     })
+    
     return (
         <div>
             {avatarList}
