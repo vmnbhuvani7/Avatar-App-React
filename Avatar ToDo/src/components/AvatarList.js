@@ -7,7 +7,7 @@ function AvatarList() {
     const [avatars, setAvatars] = useState([])
 
     const addAvatar = avatar => {
-        if (!avatar.name) {
+        if (!avatar.name && !avatar.work) {
             return;
         }
         const newAvatar = [avatar, ...avatars]
