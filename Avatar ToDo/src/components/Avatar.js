@@ -24,6 +24,7 @@ function Avatar(props) {
         <div key={avatar.id} className="card-group avtarStyle ma4 bg-light-purple pa4  dib shadow-5 ">
             <img src={`https://joeschmoe.io/api/v1/${avatar.name}`} alt="Avatar" />
             <h5 className="pt-3 text-center" key={avatar.id} >{avatar.name}</h5>
+            <h5 className="pt-3 text-center" key={avatar.id} >{avatar.work}</h5>
 
             <button className="btn btn-danger" value="Delete"
                 onClick={() => props.removeAvatar(avatar.id)}>Delete</button>
